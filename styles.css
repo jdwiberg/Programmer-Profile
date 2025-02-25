@@ -1,36 +1,7 @@
 body {
     margin: 0;
-    background: skyblue;
+    background: rgb(254, 254, 254);
     text-align: center;
 }
-.subscribe-button {
-    background-color: rgb(200, 0, 0);
-    color: rgb(253, 241, 241);
-    border: none;
-    border-radius: 3px;
-    height: 36px;
-    width: 114px;
-    cursor: pointer;
-    margin-right: 8px;
-  }
-.subscribe-button:hover {
-    opacity: 0.9;
-    color: white;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
-    
-}
-.subscribe-button:active {
-    opacity: 0.6;
-}
-  .tweet-button {
-    background-color: rgb(5, 159, 254);
-    border-radius: 45px;
-    border: none;
-    height: 45px;
-    width: 90px;
-    color: white;
-    font-weight: bold;
-    font-size: 16;
-    cursor: pointer;
 
-  }
+
