@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button id="ToggleSidebar">☰</button>
     <div class="container">
         <nav class="sidebar">
             <h2>Contents</h2>
             <ul>
-                <li><a href="index.html">Back to Main</a></li>
-                <li><a href="topic2.html">Next: Topic 2</a></li>
+                <li><a href="index.html">Intro</a></li>
+                <li><a href="topic1.html">Topic 1</a></li>
+                <li><a href="topic2.html">Topic 2</a></li>
+                <li><a href="topic3.html">Topic 3</a></li>
+                <li><a href="topic4.html">Topic 4</a></li>
+                <li><a href="appendix.html">Appendix</a></li>
+                <li><a href="sources.html">Sources</a></li>
             </ul>
         </nav>
         <main class="content">
@@ -21,4 +27,9 @@
         </main>
     </div>
 </body>
+<script>
+    document.getElementById("ToggleSidebar").addEventListener("click", function() {
+        document.querySelector(".sidebar").classList.toggle("hidden");
+    });
+</script>
 </html>
