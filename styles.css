@@ -11,12 +11,33 @@ body {
   top: 50px; /* Adjusts spacing from the top */
   width: 200px; /* Set a fixed width */
   text-align: left; /* Aligns text to the left */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hide sidebar when toggled */
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+#ToggleSidebar {
+  position: absolute;
+  left: 20px;
+  border: none;
+  background-color: rgb(234, 233, 232);
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+#ToggleSidebar:hover {
+  font-size: 35px;
+  cursor: pointer;
 }
 
 /* Change link color */
 a {
   color: black; /* Change to any color you want */
   text-decoration: none; /* Remove underline */
+  font-size: 18px;
 }
 
 /* Change link color on hover */
@@ -24,6 +45,11 @@ a:hover {
   color: gray; /* Change to any color you prefer */
   text-decoration: underline; /* Optional: underline on hover */
   
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 20px;
 }
 
 #title {
@@ -41,3 +67,5 @@ a:hover {
   font-weight: 10px;
 
 }
+
+
