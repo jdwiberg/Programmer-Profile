@@ -1,9 +1,41 @@
 “Monkey Selfie Copyright Dispute.” 2025. In Wikipedia. https://en.wikipedia.org/w/index.php?title=Monkey_selfie_copyright_dispute&oldid=1272300355.
+    Copy right status of celfies taken by monkeys using equipment belonging to David J. slater
+    Slater believed he had copy right and peta said the monkey does
+    Wikimedia said that copy right is only holdable by humans
+        Copyright office upheld that
+        Though experts say that it should have been copyrightable
+    Slater set up all the equipment for them to take it
 
 https://www.copyright.gov/docs/zarya-of-the-dawn.pdf
-
+    The copy right office detrmined the text, selection, coordination and arrangment are copyrightable
+    Canceled the previos and reduced the scope of copyright
+    There was no disclosure of generative ai work
+    The office became aware of the use of generative ai and moved to cancel copy right
+    Copy right requires two things
+        the work needs to be independetly created by the author
+        The work must possess sufficent creativity
+    Works of authorship have unfiromly limited to the creations of human
+    The office agreed that text was under copy right
+    Midjourney does not interpret prompts as instructions
+    Kashtanova claims to have engineered and refined the output
+    The output cannot be predicted by users
+    Due to this it can take a long time to generate the desired output
+    The office does not contest that effort was put in
+    But it is not creative effort
+    Alongside that the edits done in photoshop as not creative enough for copyright protection
+    
 https://www.wakeforestlawreview.com/2020/02/naruto-v-slater-one-small-step-for-a-monkey-one-giant-lawsuit-for-animal-kind/
-
+    There was some precedant that animals had writes given corpirations and trusts have rights.
+    David slater set upa  camera to allow a crested macaque to take a series of selfies
+    The court ruled that only the works created by humans were copyrightable
+    PETA pointed out this case extended to artifically intelligent computers
+    Ninth court argued that congreess and the president should have explicitatly stated animals have federal rights
+    Animals can be protected under law but not given standing
+    This case has similiarity to teh pbolems ai poses when looked at in comparission to Naruto the monkey David
+    It can currently be inferned that unless congrees explicitalty states it AI can be authors
+    U.S copy right office says works created by animals are not copyrightable
+        Therefore they can be exploited for profit
+    
 https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf
     The current consensous is law covers that material generated wholly by AI is not copyrightable
         Though unclear how using AI as a tool effects generated content
@@ -32,3 +64,10 @@ https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyri
             This means authors would be unable to make a living and those that try will derease
         The existing legal doctrines are adequate toa nswer the question of copy right of AI
         
+https://www.theguardian.com/technology/2025/feb/25/why-are-creatives-fighting-uk-government-ai-proposals-on-copyright
+    UK proposal allows ai companies to bypass copyright law for trianing
+    Gives exceptions for text and data mining
+    Gives creatives a way to opt out but there is no good right reservation process
+    Requires AI developers to have transperancy
+    AI models would be impossible to train without using copyright material
+    
