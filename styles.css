@@ -1,17 +1,24 @@
 body {
     margin: 0;
-    background: rgb(234, 233, 232);
+    background: rgb(20, 20, 20);
     text-align: center;
     font-family: "Charter", Georgia, "Times New Roman", serif;
+    color: antiquewhite;
 }
 
 .sidebar {
   position: absolute; /* Keeps it fixed in place */
   left: 20px; /* Moves it to the left */
-  top: 50px; /* Adjusts spacing from the top */
+  top: 115px; /* Adjusts spacing from the top */
   width: 200px; /* Set a fixed width */
   text-align: left; /* Aligns text to the left */
   transition: transform 0.3s ease-in-out;
+  color: antiquewhite;
+}
+
+#names {
+  font-size: 15px;
+  margin-top: 30px;
 }
 
 /* Hide sidebar when toggled */
@@ -22,10 +29,12 @@ body {
 #ToggleSidebar {
   position: absolute;
   left: 20px;
+  margin-top: 25px;
   border: none;
-  background-color: rgb(234, 233, 232);
+  background-color: rgb(20, 20, 20);
   font-size: 25px;
   transition: 0.3s;
+  color: antiquewhite;
 }
 
 #ToggleSidebar:hover {
@@ -35,7 +44,7 @@ body {
 
 /* Change link color */
 a {
-  color: black; /* Change to any color you want */
+  color: antiquewhite; /* Change to any color you want */
   text-decoration: none; /* Remove underline */
   font-size: 18px;
 }
@@ -53,25 +62,34 @@ a:hover {
 }
 
 #title {
-  color: rgb(0, 0, 0);
-  font-size: 14px;
-  font-weight: 8px;
+  color: antiquewhite;
+  font-size: 20px;
+  font-weight: lighter;
+  font-style: italic;
 }
 
 #BigTitle {
-  font-size: 40px;
+  font-size: 55px;
+  color: antiquewhite;
+  margin-top: 80px;
+}
+
+#topictitle{
+  margin-top: 80px;
 }
 
 #date {
-  color: rgb(95, 93, 93);
-  font-weight: 10px;
-
+  color: rgb(135, 134, 134);
+  font-weight: 2px;
+  font-size: 12px;
+  margin-top: 50px;
 }
 
 .content {
   position: absolute;
   text-align: left;
-  left: 200px;
+  left: 300px;
+  margin-right: 500px;
 }
 
 
