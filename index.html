@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copyright Machines of Loving Grace</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@2.1.3/marked.min.js"></script>
 </head>
 <body>
     <button id="ToggleSidebar">☰</button>
@@ -12,11 +13,11 @@
         <nav class="sidebar">
             <h2>Contents</h2>
             <ul>
-                <li><a href="index.html">Intro</a></li>
-                <li><a href="topic1.html">Topic 1</a></li>
-                <li><a href="topic2.html">Topic 2</a></li>
-                <li><a href="topic3.html">Topic 3</a></li>
-                <li><a href="topic4.html">Topic 4</a></li>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="topic1.html">Precedent</a></li>
+                <li><a href="topic2.html">Generative AI Cases</a></li>
+                <li><a href="topic3.html">Ethics</a></li>
+                <li><a href="topic4.html">Opinions</a></li>
                 <li><a href="appendix.html">Appendix</a></li>
                 <li><a href="sources.html">Sources</a></li>
             </ul>
@@ -27,9 +28,10 @@
             <h3 id="title">How AI Copyright Will Shape the Future of Creativity
             </h3>
             <p id="date">February 2025</p>
-            <p>
-                This will contain an introduction to our topic
-            </p>
+            <div id="maintext">            
+                <div id="markdown-container-i"></div>
+                <script src="load.js"></script>
+            </div>
         </main>
     </div>
 </body>
