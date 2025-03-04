@@ -74,8 +74,9 @@ a:hover {
   margin-top: 80px;
 }
 
-#topictitle{
-  margin-top: 80px;
+#topictitle {
+  margin-top: 60px;
+  font-size: 50px;
 }
 
 #date {
@@ -92,5 +93,7 @@ a:hover {
   margin-right: 500px;
 }
 
-
+#maintext {
+  font-size: 20px;
+}
 
