@@ -27,7 +27,6 @@ window.onload = function() {
     loadMarkdown('topics/cases.md', 'markdown-container-2'); 
     loadMarkdown('topics/ethics.md', 'markdown-container-3');
     loadMarkdown('topics/opinions.md', 'markdown-container-4');
-    loadMarkdown('topics/appendix.md', 'markdown-container-a');
-
+    loadMarkdown('topics/sources.md', 'markdown-container-s')
 
 };

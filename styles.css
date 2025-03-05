@@ -4,10 +4,11 @@ body {
     text-align: center;
     font-family: "Charter", Georgia, "Times New Roman", serif;
     color: antiquewhite;
+    padding-bottom: 50px;
 }
 
 .sidebar {
-  position: absolute; /* Keeps it fixed in place */
+  position: fixed; /* Keeps it fixed in place */
   left: 20px; /* Moves it to the left */
   top: 115px; /* Adjusts spacing from the top */
   width: 200px; /* Set a fixed width */
@@ -27,7 +28,7 @@ body {
 }
 
 #ToggleSidebar {
-  position: absolute;
+  position: fixed;
   left: 20px;
   margin-top: 25px;
   border: none;
@@ -90,10 +91,21 @@ a:hover {
   position: absolute;
   text-align: left;
   left: 300px;
+  display: inline-block;
   margin-right: 500px;
+  padding-bottom: 500px;
 }
 
 #maintext {
   font-size: 20px;
+}
+
+#source {
+  text-decoration: underline;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+#source:hover {
+  color: gray;
 }
 
