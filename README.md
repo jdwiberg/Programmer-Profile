@@ -5,5 +5,7 @@ Site located at: https://jdwiberg.github.io/Gen-AI-Project
 Key files
 - `index.html`: Single-page site with sections (Home, Resume, Projects, Achievements, Bio, Skills, Contact)
 - `styles.css`: Global styles and layout
-- `resume.html`, `projects.html`, `achievements.html`, `bio.html`, `skills.html`, `contact.html`: Legacy standalone pages (kept as simple mirrors if needed)
-- `resume.pdf`: Put your resume file here to power the embed and download button
+- `Jacob_Wiberg_Resume.pdf`: Embedded and downloadable resume
+
+Notes
+- Legacy standalone pages have been removed now that everything lives in `index.html`.

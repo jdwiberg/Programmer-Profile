@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- PDF.js for inline PDF rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+    <!-- Local Markdown renderer (Marked-compatible minimal parser) -->
+    <script src="assets/vendor/marked-lite.js"></script>
 </head>
 <body>
     <button id="ToggleSidebar">☰</button>
@@ -15,69 +19,106 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#bio">Bio</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <main class="content">
             <section id="home" class="hero">
                 <div class="hero-media">
-                    <div class="hero-photo" title="Add your headshot by replacing this placeholder."></div>
+                    <!--<div class="hero-photo" title="Add your headshot by replacing this placeholder."></div>-->
+                    <img class="hero-img" src="assets/mypicture.jpeg" alt="Jacob Wiberg headshot">
                     <!-- To use an actual image, replace the div above with:
-                    <img class="hero-img" src="assets/headshot.jpg" alt="Jacob Wiberg headshot">
+                    
                     -->
                 </div>
                 <div class="hero-copy">
                     <h1 class="hero-title">Jacob Wiberg</h1>
-                    <p class="hero-statement">Add your hero statement here (what you do + impact).</p>
-                    <p class="hero-subhead">Add a concise subheading (focus areas, school, interests).</p>
-                    <div class="availability-pill">Currently open to Summer 2025 SWE internships</div>
-                    <div class="cta-row">
-                        <a class="btn" href="#resume">View Resume</a>
-                        <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">Resume GPT (beta)</a>
-                    </div>
+                    <p class="hero-statement">Undergraduate Computer Science Student</p>
+                    <p class="hero-subhead">WPI Class of 2026 CS student focusing on ML and AI applications.</p>
+                    <div class="availability-pill">Currently Open to Full-Time Positions Starting Summer 2026</div>
+                    <!-- Moved CTAs to the Resume section per request -->
                 </div>
             </section>
             
             <section id="resume" class="section">
                 <h2>Resume</h2>
-                <p>
-                    <a class="btn" href="resume.pdf" download>Download PDF</a>
-                </p>
-                <div class="pdf-embed">
-                    <iframe src="resume.pdf" title="Resume PDF" loading="lazy"></iframe>
+                <p class="resume-note">Explore my resume in three ways: read the embedded version below, download the PDF, or try my Resume GPT (beta) trained on its contents.</p>
+                <div class="cta-row">
+                    <a class="btn" href="assets/Jacob_Wiberg_Resume.pdf" download>Download PDF</a>
+                    <a class="btn btn-secondary" href="https://chatgpt.com/g/g-68184978bf708191907e3c41311d929c-jakegpt" target="_blank" rel="noopener" title="Replace # with your GPT link">Resume GPT (beta)</a>
+                </div>
+                <div id="pdfControls" class="pdf-controls" hidden>
+                    <button id="prevPage" class="btn btn-secondary">Prev</button>
+                    <button id="nextPage" class="btn btn-secondary">Next</button>
+                    <span id="pageInfo">Page 1 of 1</span>
+                    <span style="margin-left:10px"></span>
+                    <button id="zoomOut" class="btn btn-secondary">-</button>
+                    <button id="zoomIn" class="btn btn-secondary">+</button>
+                </div>
+                <div id="pdfViewer" class="pdf-viewer" hidden>
+                    <canvas id="pdfCanvas"></canvas>
                 </div>
             </section>
 
             <section id="projects" class="section">
                 <h2>Projects</h2>
-                <p>Highlight 2–3 top projects with one-line impact and links.</p>
-            </section>
-
-            <section id="achievements" class="section">
-                <h2>Achievements</h2>
-                <p>List awards, certifications, scholarships, publications, or recognitions.</p>
+                <div class="projects-grid">
+                    <a class="project-card" href="https://haystackid.com/" target="_blank" rel="noopener" title="Add your MQP project URL">
+                        <div class="project-thumb" aria-hidden="true">
+                            <img class="project-img" src="assets/mqp.png" alt="MQP project thumbnail">
+                        </div>
+                        <div class="project-meta">
+                            <h3>Major Qualifying Project (MQP)</h3>
+                            <p>Sponsored by HaystackID: Benchmarking the efficacy of entity extraction from large data sets using LLMs, NLP, and other strategies. (more info coming soon)</p>
+                        </div>
+                    </a>
+                    <a class="project-card" href="https://sites.google.com/view/v25e-bluecon/home?pli=1" target="_blank" rel="noopener" title="Add your IQP project URL">
+                        <div class="project-thumb" aria-hidden="true">
+                            <img class="project-img" src="assets/iqp.jpg" alt="IQP project thumbnail">
+                        </div>
+                        <div class="project-meta">
+                            <h3>Interactive Qualifying Project (IQP)</h3>
+                            <p>Supporting SerenDPT in their mission to create a more promising future for Venice by analysing the potential for sustainable growth in the city.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="github-cta">
+                    <div class="github-cta-text">
+                        <strong>More projects:</strong> Check out everything else I’ve coded on GitHub.
+                    </div>
+                    <a class="btn" href="github.com/jdwiberg" target="_blank" rel="noopener" title="Add your GitHub profile URL">Visit GitHub</a>
+                </div>
             </section>
 
             <section id="bio" class="section">
                 <h2>Bio</h2>
-                <p>Write a concise professional bio: background, focus areas, interests.</p>
-            </section>
-
-            <section id="skills" class="section">
-                <h2>Skills</h2>
-                <p>Summarize technical skills, tools, and technologies (group by category).</p>
+                <!-- Bio images: first floats left; second will be injected after paragraph 2 -->
+                <img class="bio-photo left" src="assets/bio1.jpeg" alt="Jacob Wiberg" />
+                <!-- Second image injected by script for diagonal layout -->
+                <div id="bioContent"><p>Loading bio…</p></div>
             </section>
 
             <section id="contact" class="section">
                 <h2>Contact</h2>
-                <p>
-                    Email: your.email@example.com<br>
-                    LinkedIn: <a href="#">Add your LinkedIn URL</a><br>
-                    GitHub: <a href="#">Add your GitHub URL</a>
-                </p>
+                <div class="contact-row">
+                    <div class="contact-item">
+                        <span class="label">Email:</span>
+                        <a href="mailto:jacobdwiberg@gmail.com">jacobdwiberg@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label">Phone:</span>
+                        <a href="tel:+16033950615">+1 (603) 395-0615</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label">LinkedIn:</span>
+                        <a href="#" target="_blank" rel="noopener">Add your LinkedIn URL</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label">GitHub:</span>
+                        <a href="#" target="_blank" rel="noopener">github.com/jdwiberg</a>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
@@ -85,6 +126,105 @@
 <script>
     document.getElementById("ToggleSidebar").addEventListener("click", function() {
         document.querySelector(".sidebar").classList.toggle("hidden");
+    });
+    // Inline PDF rendering using PDF.js (auto-load on visit)
+    const pdfUrl = 'assets/Jacob_Wiberg_Resume.pdf';
+    let pdfDoc = null;
+    let pageNum = 1;
+    let pageCount = 1;
+    let scale = 1.25;
+    let rendering = false;
+    let pendingPage = null;
+
+    function renderPage(num) {
+        rendering = true;
+        pdfDoc.getPage(num).then(page => {
+            const viewport = page.getViewport({ scale });
+            const canvas = document.getElementById('pdfCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            const renderTask = page.render({ canvasContext: ctx, viewport });
+            return renderTask.promise;
+        }).then(() => {
+            rendering = false;
+            document.getElementById('pageInfo').textContent = `Page ${pageNum} of ${pageCount}`;
+            if (pendingPage !== null) {
+                const next = pendingPage; pendingPage = null; renderPage(next);
+            }
+        });
+    }
+
+    function queueRenderPage(num) {
+        if (rendering) {
+            pendingPage = num;
+        } else {
+            renderPage(num);
+        }
+    }
+
+    function onPrevPage() { if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); }
+    function onNextPage() { if (pageNum >= pageCount) return; pageNum++; queueRenderPage(pageNum); }
+    function onZoom(delta) { scale = Math.max(0.5, Math.min(3, scale + delta)); queueRenderPage(pageNum); }
+
+    window.addEventListener('load', async function() {
+        if (window['pdfjsLib']) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+        }
+        try {
+            const loadingTask = pdfjsLib.getDocument(pdfUrl);
+            pdfDoc = await loadingTask.promise;
+            pageCount = pdfDoc.numPages;
+            document.getElementById('pdfControls').hidden = false;
+            document.getElementById('pdfViewer').hidden = false;
+            renderPage(pageNum);
+            // Hook up controls
+            document.getElementById('prevPage').onclick = onPrevPage;
+            document.getElementById('nextPage').onclick = onNextPage;
+            document.getElementById('zoomOut').onclick = () => onZoom(-0.25);
+            document.getElementById('zoomIn').onclick = () => onZoom(0.25);
+        } catch (e) {
+            console.error('Failed to load PDF:', e);
+            // Keep controls hidden if load fails
+        }
+    });
+
+    // Load bio content from bio.md (Markdown)
+    window.addEventListener('load', async function() {
+        const container = document.getElementById('bioContent');
+        try {
+            const res = await fetch('bio.md');
+            if (!res.ok) throw new Error('bio.md not found');
+            const md = await res.text();
+            const html = (window.marked && marked.parse) ? marked.parse(md) : md
+                .split(/\n\n+/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+            container.innerHTML = html;
+
+            // Insert the second bio image after the second paragraph for a diagonal layout
+            let paras = container.querySelectorAll('p');
+            const insertAfter = paras[1] || paras[0] || container.firstChild;
+            if (insertAfter) {
+                const img = document.createElement('img');
+                img.className = 'bio-photo right';
+                img.src = 'assets/bio2.jpeg';
+                img.alt = 'Jacob Wiberg';
+                insertAfter.parentNode.insertBefore(img, insertAfter.nextSibling);
+            }
+
+            // Insert a third photo slightly higher (before the second-to-last paragraph if possible)
+            paras = container.querySelectorAll('p');
+            const targetPara = paras.length > 2 ? paras[paras.length - 2] : (paras[1] || paras[0]);
+            if (targetPara) {
+                const img3 = document.createElement('img');
+                img3.className = 'bio-photo left';
+                img3.src = 'assets/bio3.jpeg';
+                img3.alt = 'Jacob Wiberg';
+                targetPara.parentNode.insertBefore(img3, targetPara);
+            }
+        } catch (e) {
+            container.innerHTML = '<p>Could not load bio.md. Please ensure the file is present.</p>';
+            console.error(e);
+        }
     });
 </script>
 </html>
