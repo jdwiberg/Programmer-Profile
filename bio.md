@@ -2,7 +2,7 @@ I am an undergraduate Computer Science student and Varsity Athlete at Worcester 
 
 My focus is on Machine Learning and Artificial Intelligence applications, with projects spanning natural language processing, large-scale data analysis, LLM training, and more general AI algorithms. I have significant experience working with and implementing programs in Python and PyTorch.
 
-Right now, I am working with HaystackID, a company specializing in eDiscovery solutions, to research methods of performing entity extraction on large legal datasets. We are exploring the efficacy of more traditional strategies using NLP and other deterministic algorithms, as well as newer strategies using both open-source and locally trained LLMs.
+Right now, I'm working with HaystackID, a company specializing in eDiscovery solutions, to research methods of performing entity extraction on large legal datasets. We are exploring the efficacy of more traditional strategies using NLP and other deterministic algorithms, as well as newer strategies using both open-source and locally trained LLMs.
 
 I also have experience in other programming languages and domains. In other projects, I have performed data extraction from large datasets using SQL, front-end web development using CSS, HTML, and JavaScript, as well as work in other languages such as C, C++, and Java.
 
