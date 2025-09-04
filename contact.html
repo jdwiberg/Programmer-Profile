@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="ToggleSidebar">☰</button>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#resume">Resume</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#achievements">Achievements</a></li>
+                <li><a href="index.html#bio">Bio</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1 id="names">Jacob Wiberg</h1>
+            <h1 id="topictitle">Contact</h1>
+            <div id="maintext">
+                - Email: your.email@example.com<br>
+                - LinkedIn: <a href="#">Add your LinkedIn URL</a><br>
+                - GitHub: <a href="#">Add your GitHub URL</a><br>
+                - Location: City, State (optional)
+            </div>
+        </main>
+    </div>
+</body>
+<script>
+    document.getElementById("ToggleSidebar").addEventListener("click", function() {
+        document.querySelector(".sidebar").classList.toggle("hidden");
+    });
+</script>
+</html>

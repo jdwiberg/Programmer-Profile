@@ -6,6 +6,7 @@ body {
     color: antiquewhite;
     padding-bottom: 50px;
 }
+html { scroll-behavior: smooth; }
 
 .sidebar {
   position: fixed; /* Keeps it fixed in place */
@@ -91,8 +92,8 @@ a:hover {
   position: absolute;
   text-align: left;
   left: 300px;
-  display: inline-block;
-  margin-right: 500px;
+  right: 60px; /* widen content area */
+  display: block;
   padding-bottom: 500px;
 }
 
@@ -109,3 +110,129 @@ a:hover {
   color: gray;
 }
 
+/* Hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 80px;
+}
+
+.hero-media {
+  flex: 0 0 auto;
+}
+
+.hero-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2b2b2b, #3a3a3a);
+  border: 2px solid #555;
+}
+
+.hero-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #555;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 40px;
+}
+
+.hero-statement {
+  margin: 0;
+  font-size: 20px;
+  color: antiquewhite;
+}
+
+.hero-subhead {
+  margin: 0;
+  font-size: 16px;
+  color: rgb(170, 170, 170);
+}
+
+.availability-pill {
+  display: inline-block;
+  width: fit-content;
+  background: #2a2a2a;
+  border: 1px solid #555;
+  color: antiquewhite;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* CTA buttons */
+.cta-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: antiquewhite;
+  color: #141414;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  filter: brightness(0.9);
+}
+
+.btn.btn-secondary {
+  background: #2a2a2a;
+  color: antiquewhite;
+  border: 1px solid #555;
+}
+
+/* PDF embed */
+.pdf-embed {
+  margin-top: 16px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1e1e1e;
+}
+
+.pdf-embed iframe {
+  width: 100%;
+  height: 900px;
+  border: none;
+  background: #1e1e1e;
+}
+
+/* Generic sections for single page */
+.section {
+  margin-top: 120px;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin: 0 0 8px 0;
+}
+
+.section p {
+  font-size: 18px;
+  color: rgb(200, 200, 200);
+}
+
+@media (max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
