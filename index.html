@@ -112,7 +112,7 @@
                     </div>
                     <div class="contact-item">
                         <span class="label">LinkedIn:</span>
-                        <a href="#" target="_blank" rel="noopener">Add your LinkedIn URL</a>
+                        <a href="www.linkedin.com/in/jacobdwiberg" target="_blank" rel="noopener">linkedin.com/jacobdwiberg</a>
                     </div>
                     <div class="contact-item">
                         <span class="label">GitHub:</span>
@@ -132,19 +132,39 @@
     let pdfDoc = null;
     let pageNum = 1;
     let pageCount = 1;
-    let scale = 1.25;
+    // Zoom factor relative to 'fit to viewer width'
+    let scale = 1;
     let rendering = false;
     let pendingPage = null;
 
     function renderPage(num) {
         rendering = true;
         pdfDoc.getPage(num).then(page => {
-            const viewport = page.getViewport({ scale });
+            const container = document.getElementById('pdfViewer');
             const canvas = document.getElementById('pdfCanvas');
             const ctx = canvas.getContext('2d');
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
-            const renderTask = page.render({ canvasContext: ctx, viewport });
+
+            // Fit-to-width base scale
+            const unscaled = page.getViewport({ scale: 1 });
+            const styles = getComputedStyle(container);
+            const paddingX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+            const innerWidth = Math.max(0, container.clientWidth - paddingX);
+            const fitScale = innerWidth > 0 ? (innerWidth / unscaled.width) : 1;
+            const effectiveScale = Math.max(0.1, Math.min(5, fitScale * scale));
+            const viewport = page.getViewport({ scale: effectiveScale });
+
+            // HiDPI/retina output scaling
+            const outputScale = Math.max(1, window.devicePixelRatio || 1);
+            canvas.style.width = `${viewport.width}px`;
+            canvas.style.height = `${viewport.height}px`;
+            canvas.width = Math.floor(viewport.width * outputScale);
+            canvas.height = Math.floor(viewport.height * outputScale);
+
+            const renderTask = page.render({
+                canvasContext: ctx,
+                viewport,
+                transform: [outputScale, 0, 0, outputScale, 0, 0]
+            });
             return renderTask.promise;
         }).then(() => {
             rendering = false;
@@ -165,7 +185,7 @@
 
     function onPrevPage() { if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); }
     function onNextPage() { if (pageNum >= pageCount) return; pageNum++; queueRenderPage(pageNum); }
-    function onZoom(delta) { scale = Math.max(0.5, Math.min(3, scale + delta)); queueRenderPage(pageNum); }
+    function onZoom(delta) { scale = Math.max(0.25, Math.min(4, scale + delta)); queueRenderPage(pageNum); }
 
     window.addEventListener('load', async function() {
         if (window['pdfjsLib']) {
@@ -183,6 +203,8 @@
             document.getElementById('nextPage').onclick = onNextPage;
             document.getElementById('zoomOut').onclick = () => onZoom(-0.25);
             document.getElementById('zoomIn').onclick = () => onZoom(0.25);
+            // Keep crisp/fitted on resize
+            window.addEventListener('resize', () => queueRenderPage(pageNum));
         } catch (e) {
             console.error('Failed to load PDF:', e);
             // Keep controls hidden if load fails
