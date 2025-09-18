@@ -124,9 +124,12 @@
     </div>
 </body>
 <script>
-    document.getElementById("ToggleSidebar").addEventListener("click", function() {
-        document.querySelector(".sidebar").classList.toggle("hidden");
-    });
+    const toggleSidebar = document.getElementById("ToggleSidebar");
+    if (toggleSidebar) {
+        toggleSidebar.addEventListener("click", function() {
+            document.querySelector(".sidebar").classList.toggle("hidden");
+        });
+    }
     // Inline PDF rendering using PDF.js (auto-load on visit)
     const pdfUrl = 'assets/Jacob_Wiberg_Resume.pdf';
     let pdfDoc = null;
